@@ -20,11 +20,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-4j(z345r0%n-_k#20mc8rrw(b*21)phv%r3165md4v#yg4#1ap'
-
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+}
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -41,7 +43,8 @@ INSTALLED_APPS = [
     "rest_framework.authtoken",
     "allauth",
     "allauth.socialaccount",
-    "allauth.account"
+    "allauth.account",
+    "django_filters"
 ]
 
 MIDDLEWARE = [
